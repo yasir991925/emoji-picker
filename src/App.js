@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React , { useState} from 'react';
 import './App.css';
+import Search from './Components/Search';
+import EmojiCointainer from './Components/EmojiContainer';
 
 function App() {
+  const [state,setState] = useState([])
+
+  function loadEmoji(data){
+    setState(data)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search loadEmoji={loadEmoji}/>
+      <EmojiCointainer data={state} />
     </div>
   );
 }
