@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useRef} from 'react'
 
 const Emoji = (props) => {
+    const emojiRef = useRef(null);
+    function copyToClipboard(e) {
+        props.click(emojiRef.current.innerText)
+      };
     return(
-        <div className="emojis">{props.children}</div>
+        <div className="emoji" ref={emojiRef} onClick={copyToClipboard}>{props.children}</div>
     )
 }
 

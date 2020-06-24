@@ -1,18 +1,14 @@
-import React , {useState} from 'react'
+import React from 'react'
 import filterEmoji from './filterEmoji'
 
 const Search = ({loadEmoji}) => {
-
-    const [value,setValue] = useState('')
-
     function search(e){
-        setValue(e.target.value)
-        loadEmoji(filterEmoji(value))
+        loadEmoji(filterEmoji(e.target.value))
     }
 
     return(
         <div className="search">
-            <input value={value} onChange={search} />
+            <input onChange={search} placeholder="search here" />
         </div>
     )
 }

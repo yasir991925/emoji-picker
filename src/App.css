@@ -1,22 +1,74 @@
-.App {
-  text-align: center;
+.App{
+  position: relative;
+  background: #404cf7;
+  overflow: auto;
+  height: 100vh;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search{  
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-.App-link {
-  color: #09d3ac;
+.search > input{
+  font-size: 3vw;
+  width: 40%;
+  outline: none;
+  border: none;
+  padding: 20px 0px;
+  border-bottom: 2px solid #fefefe;
+  background: none;
+  color: #fefefe;
+  font-weight: bolder;
+}
+
+.emoji-container{
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.emoji{
+  position: relative;
+  font-size: 4vw;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+  vertical-align: center;
+  padding: calc(45%/2) 0;
+}
+
+.emoji:hover{
+  box-shadow: 0px 30px 60px rgba(0,0,0,0.2);
+  background: #fff;
+}
+
+.oops{
+  margin: 0;
+  font-size: 10vw;
+  grid-column: 1/-1;
+  margin: 0 auto;
+}
+
+.popup{
+  position: fixed;
+  background: #fff;
+  color: #404cf7;
+  padding: 20px 40px;
+  border-radius: 50px;
+  box-shadow: 0px 30px 60px rgba(0,0,0,0.2);
+  opacity: 0;
+  left: 50%;
+  bottom: 5%;
 }
